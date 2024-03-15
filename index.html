@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Option Selector</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .options {
+    margin-top: 50px;
+  }
+  .option-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 2px solid #000;
+    background-color: #fff;
+  }
+  .option-button:hover {
+    background-color: #f0f0f0;
+  }
+  .image-container {
+    margin-top: 50px;
+  }
+  .selected-image {
+    max-width: 100%;
+  }
+</style>
+</head>
+<body>
+  <h1>Select an Option</h1>
+  <div class="options">
+    <button class="option-button" onclick="showImage('gracia')">Gracia</button>
+    <button class="option-button" onclick="showImage('provenza')">Provenza</button>
+  </div>
+  <div class="image-container" id="image-container">
+    <!-- Image will be displayed here -->
+  </div>
+
+  <script>
+    function showImage(option) {
+      var imageContainer = document.getElementById('image-container');
+      var imageSrc = '';
+
+      if (option === 'gracia') {
+        imageSrc = 'gracia.jpeg'; // Image filename for Gracia
+      } else if (option === 'provenza') {
+        imageSrc = 'provenza.jpeg'; // Image filename for Provenza
+      }
+
+      imageContainer.innerHTML = '<img src="' + imageSrc + '" class="selected-image" alt="' + option + '">';
+    }
+  </script>
+</body>
+</html>
